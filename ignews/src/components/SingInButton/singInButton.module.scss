@@ -1,0 +1,28 @@
+.signInButton {
+    height: 3rem;
+    padding: 0 1.5rem;
+    font-weight: bold;
+    color: var(--white);
+    background: var(--outer-space-800);
+    border: none;
+    border-radius: 3rem;
+
+    display: flex;
+    align-items: center;
+
+    svg:first-child{
+        margin-right: .5rem;
+        height: 24px;
+        width: 24px;
+    }
+
+    svg.closeIcon{
+        margin-left: .5rem;
+    }
+
+    transition: filter .2s;
+
+    &:hover{
+        filter: brightness(.8);
+    }
+}
