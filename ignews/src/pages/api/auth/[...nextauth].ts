@@ -13,18 +13,22 @@ export default NextAuth({
             scope: 'read:user'
         }),
     ],
-
     callbacks: {
         async signIn(user, account, profile) {
             const { email } = user;
-            
-            await fauna.query(
-                query.Create(
-                    query.Collection('users'),
-                    {data: email}
+
+            try{
+                await fauna.query(
+                    query.Create(
+                        query.Collection('users'),
+                        {data: {email}}
+                    )
                 )
-            )
-            return true
+
+                return true;
+            } catch {
+                return false
+            }
         },
     }
 });
