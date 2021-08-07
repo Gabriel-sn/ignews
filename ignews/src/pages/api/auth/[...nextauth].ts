@@ -30,7 +30,7 @@ export default NextAuth({
                        ),
 
                        query.Create(
-                           query.Collection('user'),
+                           query.Collection('users'),
                            { data: {email} }
                        ),
 
